@@ -8,15 +8,15 @@ const ListItemLink = ({event}) => {
         () => React.forwardRef((itemProps, ref) => <Link to={to} ref={ref} {...itemProps} />),
         [to],
     );
-
+    console.log('====', event)
     return (
         <li>
             <ListItem button divider component={renderLink}>
                 <Box width="100%" display="flex" justifyContent="space-between" alignItems="center">
-                    <Typography variant="h6">{event.name}</Typography>
+                    <Typography variant="h6">{event[0]}</Typography>
                     <Box display="flex" alignItems="center">
-                        <Typography variant="subtitle2">Tickets:&nbsp;</Typography>
-                        <Typography variant="body2">{event.tickets.length}&nbsp;&nbsp;&nbsp;&nbsp;</Typography>
+                        <Typography variant="subtitle2">Date:&nbsp;</Typography>
+                        <Typography variant="body2">{event[1]}&nbsp;&nbsp;&nbsp;&nbsp;</Typography>
                         <Typography variant="subtitle2">Creator:&nbsp;</Typography>
                         <Typography variant="body2">0x23576583H46457457</Typography>
                     </Box>

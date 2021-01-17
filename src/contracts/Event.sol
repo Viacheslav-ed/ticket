@@ -1,12 +1,14 @@
-pragma solidity >=0.5.16;
+pragma solidity ^0.7.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+//import '@openzeppelin/contracts/access/Ownable.sol';
 
 contract Event is ERC721 {
-    string name;
-    address creator;
+    address factory;
+    address owner;
 
-    constructor() public ERC721("Event Ticket", "ETCK") {}
-
-    function
+    constructor(string memory name, address creator) public ERC721(name, "TCK") {
+        factory = msg.sender;
+        owner = creator;
+    }
 }

@@ -4,7 +4,7 @@ import {Typography, TextField, Button, Box} from "@material-ui/core";
 const Main = ({createEvent}) => {
     const [name, setName] = React.useState('');
     const handleChange = event => setName(event.target.value);
-    const handleClick = () => createEvent(name);
+    const handleClick = () => createEvent(name, Date.now());
     return (
         <div>
             <Typography variant="h6" align="center" paragraph>Create event</Typography>
